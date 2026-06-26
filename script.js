@@ -1,25 +1,20 @@
-const btn = document.getElementById("btn");
+async function main() {
+    const pyodide = await loadPyodide();
 
-btn.addEventListener("click", function(){
-    alert("ボタンが押された！");
-});
-const now = new Date();
-console.log("アクセス時間:", now.toLocaleString());
+    const code = await fetch("python/main.py")
+        .then(response => response.text());
 
-const btn = document.getElementById("btn");
+    await pyodide.runPythonAsync(code);
 
-navigator.geolocation.getCurrentPosition(
-    function(position){
-        console.log("緯度:", position.coords.latitude);
-        console.log("経度:", position.coords.longitude);
-    },
-    function(error){
-        console.log("位置情報は取得できませんでした。");
-    }
-);
+    const result = pyodide.runPython("greet()");
+
+    document.getElementById("result").innerText = result;
+}
+
+main();
 
 const btn = document.getElementById("btn");
 
-btn.addEventListener("click", function(){
+btn.addEventListener("click", () => {
     alert("ボタンが押された！");
 });
