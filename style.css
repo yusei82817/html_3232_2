@@ -1,0 +1,19 @@
+body{
+    background:#202124;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    margin-top:100px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:18px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+}
+
+button:hover{
+    background:skyblue;
+}
