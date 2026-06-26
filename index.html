@@ -13,15 +13,35 @@
 
     <p>これが私のWebサイトです。</p>
 
-    <button id="btn">
-        押してみる
-    </button>
+    <button id="btn">押してみる</button>
 
+    <p id="result">Pyodideを読み込み中...</p>
+
+    <!-- Pyodideを先に読み込む -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+
+    <!-- あなたのJavaScript -->
     <script src="script.js"></script>
 
-    Pyodideの超簡単テスト読み込み中...async function main() {
-    // 3. 実行環境の準備let pyodide = await loadPyodide();
-    // 4. Pythonコードを実行して結果を「res」に代入let res = pyodide.runPython(# ここにPythonコードを書く text = "こんにちは！" number = 100 * 5 f"{text} 計算結果は {number} です。");
-    // 5. HTMLに結果を表示document.getElementById("result").innerText = res;}main();
+    <!-- Pyodideのテスト -->
+    <script>
+        async function main() {
+            // Pyodideを読み込む
+            let pyodide = await loadPyodide();
+
+            // Pythonを実行
+            let res = pyodide.runPython(`
+text = "こんにちは！"
+number = 100 * 5
+f"{text} 計算結果は {number} です。"
+`);
+
+            // HTMLへ表示
+            document.getElementById("result").innerText = res;
+        }
+
+        main();
+    </script>
+
 </body>
 </html>
