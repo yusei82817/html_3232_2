@@ -19,5 +19,9 @@
 
     <script src="script.js"></script>
 
+    Pyodideの超簡単テスト読み込み中...async function main() {
+    // 3. 実行環境の準備let pyodide = await loadPyodide();
+    // 4. Pythonコードを実行して結果を「res」に代入let res = pyodide.runPython(# ここにPythonコードを書く text = "こんにちは！" number = 100 * 5 f"{text} 計算結果は {number} です。");
+    // 5. HTMLに結果を表示document.getElementById("result").innerText = res;}main();
 </body>
 </html>
