@@ -1,0 +1,5 @@
+alert("Hello")
+alert("I am god")
+alert("I always observe human deeds")
+alert("It is good Weather")
+alert("but human deeds is bat")
