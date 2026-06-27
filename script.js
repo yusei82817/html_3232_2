@@ -16,5 +16,5 @@ main();
 const btn = document.getElementById("btn");
 
 btn.addEventListener("click", () => {
-    alert("ボタンが押された！");
+    alert("Hello world! my name is nio!");
 });
