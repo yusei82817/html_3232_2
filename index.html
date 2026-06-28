@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    <div style="text-align: center;">
+
     <h1>ようこそ！</h1>
 
     <p>nio3232のwebへ！</p>
@@ -17,30 +19,11 @@
     <p>ゲームやサイトをプログラミングしています</p>
 
     <button id="btn">押してみる</button>
+    </div>
 
     <!-- あなたのJavaScript -->
     <script src="script.js"></script>
     <script src="script2.js"></script>
-
-    <!-- Pyodideのテスト -->
-    <script>
-        async function main() {
-            // Pyodideを読み込む
-            let pyodide = await loadPyodide();
-
-            // Pythonを実行
-            let res = pyodide.runPython(`
-text = "こんにちは！"
-number = 100 * 5
-f"{text} 計算結果は {number} です。"
-`);
-
-            // HTMLへ表示
-            document.getElementById("result").innerText = res;
-        }
-
-        main();
-    </script>
 
 </body>
 </html>
