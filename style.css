@@ -20,12 +20,50 @@ button:hover{
     background:skyblue;
 }
 
-h1 {
-    color: red;
+/* === ここから変更（バグ演出） === */
+
+h1, p {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
 }
 
+/* 赤いh1のバグ表現 */
+h1 {
+    color: red;
+    font-size: 2rem;
+    /* 赤の補色（シアン）をズラして重ねる */
+    text-shadow: -2px 0 cyan, 0 1px #fff;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+/* プラム色のpのバグ表現 */
 p {
     color: plum;
-    text-shadow: 2px 2px 0px black,
-    -1px -1px 12px cyan;
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* 元の黒シャドウを活かしつつ、バグ感をプラス */
+    text-shadow: 2px 2px 0px black, -2px -2px 0px cyan;
+    animation: glitch-anim 0.4s infinite linear;
+}
+
+/* 瞬間的に文字を切り取るアニメーション（p用） */
+@keyframes glitch-anim {
+    0% { clip-path: inset(10% 0 80% 0); transform: translateX(-2px); }
+    20% { clip-path: inset(60% 0 10% 0); transform: translateX(2px); }
+    40% { clip-path: inset(30% 0 50% 0); transform: translateX(-1px); }
+    60% { clip-path: inset(80% 0 5% 0); transform: translateX(3px); }
+    80% { clip-path: inset(15% 0 70% 0); transform: translateX(-3px); }
+    100% { clip-path: inset(50% 0 30% 0); transform: translateX(0); }
+}
+
+/* 左右に細かくガタガタ歪ませるアニメーション（h1用） */
+@keyframes glitch-skew {
+    0% { transform: skewX(0deg); }
+    20% { transform: skewX(-5deg); }
+    40% { transform: skewX(5deg); }
+    61% { transform: skewX(-15deg); }
+    65% { transform: skewX(10deg); }
+    80% { transform: skewX(0deg); }
+    100% { transform: skewX(2deg); }
 }
