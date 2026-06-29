@@ -22,7 +22,7 @@ button:hover{
 
 /* === ここから変更（バグ演出） === */
 
-h1, p {
+.bug {
     position: relative;
     display: block;
     font-family: sans-serif;
