@@ -24,7 +24,7 @@ button:hover{
 
 h1, p {
     position: relative;
-    display: inline-block;
+    display: block;
     font-family: sans-serif;
 }
 
