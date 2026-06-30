@@ -6,6 +6,13 @@ body {
         linear-gradient(45deg, transparent 75%, #ddd 75%),
         linear-gradient(-45deg, transparent 75%, #ddd 75%);
     background-size: 40px 40px;
+    display: flex;
+    flex-direction: column;   /* 要素を縦に並べる */
+    justify-content: center;  /* 上下の中央揃え */
+    align-items: center;      /* 左右の中央揃え */
+    min-height: 100vh;        /* 画面全体の高さを基準にする */
+    margin: 0;                /* 余計な隙間をなくす */
+    gap: 20px;                /* 💡 要素と要素の間のスキマ（お好みで調整） */
 }
 
 button{
